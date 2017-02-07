@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Places Finder</string>
+
+    <string name="tap_find">Tap to continue</string>
+
+    <string name="mile_distance"> Mile from you</string>
+
+    <!-- navigation Menu -->
+    <string name="fav">Favorites </string>
+    <string name="set">Settings</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- popup Menu -->
+    <string name="share">Share Intent </string>
+    <string name="save">Save To Favorites</string>
+
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings for distance -->
+    <string name="pref_header_distance">Distance</string>
+    <string name="pref_title_distance_type">Distance type</string>
+
+    <string name="km">Km</string>
+    <string name="mile">Mile</string>
+
+    <string name="distance_key">distance_value</string>
+    <string-array name="distance_titles">
+        <item>@string/km</item>
+        <item>@string/mile</item>
+    </string-array>
+    <string-array name="distance_values">
+        <item>@string/km</item>
+        <item>@string/mile</item>
+    </string-array>
+
+    <!-- settings for favorites -->
+    <string name="pref_header_fav">Favorites</string>
+    <string name="pref_key_delete_fav">delete_favorite_btn</string>
+    <string name="delete_title">Delete all favorites</string>
+
+</resources>

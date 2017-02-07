@@ -1,0 +1,7 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="@string/pref_key_delete_fav"
+        android:title="@string/delete_title" />
+
+</PreferenceScreen>
