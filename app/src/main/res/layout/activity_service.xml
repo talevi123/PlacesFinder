@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.tal.placesfinder.Activites.ServiceActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="בחר את השירות הרצוי"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#010101"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vacinity"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btn1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/acustomimage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="אשנב כל"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/amara" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="המרת מטבע"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btn3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/box" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="מסירת דואר"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"/>
+</LinearLayout>
