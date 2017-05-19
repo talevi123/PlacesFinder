@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
 
     private void tapBtn() {
         image = (ImageView) findViewById(R.id.logo);
+//        
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
