@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/map2"
+    android:background="@drawable/post_office_build"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="178dp"

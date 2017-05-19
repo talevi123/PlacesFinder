@@ -46,15 +46,6 @@ public class Place implements Serializable {
         this.longitude = jsonObject.optJSONObject("geometry").optJSONObject("location").optString("lng");
     }
 
-    public Place(JSONObject jsonObject, int i) {
-        this.name = jsonObject.optString("name");
-        this.vicinity = jsonObject.optString("vicinity");
-        this.photo = jsonObject.optString("photo");
-        this.latitude = jsonObject.optString("latitude");
-        this.longitude = jsonObject.optString("longitude");
-        this.distance = jsonObject.optString("distance");
-    }
-
     public Place(Cursor cursor) {
         this.name = cursor.getString(cursor.getColumnIndex(PlacesSQLiteHelper.COLUMN_NAME));
         this.vicinity = cursor.getString(cursor.getColumnIndex(PlacesSQLiteHelper.COLUMN_ADRESS));

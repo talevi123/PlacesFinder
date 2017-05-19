@@ -48,15 +48,15 @@
     <Button
         android:id="@+id/nearby_btn"
         android:layout_width="330dp"
-        android:drawableRight="@android:drawable/ic_dialog_map"
-        android:text="Search For Nearby Places"
+        android:text="Search For Nearby Post office"
         android:textColor="#ffff"
         android:paddingRight="50dp"
         android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
-        android:background="#000000" />
+        android:background="#000000"
+        android:drawableRight="@android:drawable/ic_menu_myplaces" />
 
     <!--<fragment-->
         <!--android:id="@+id/recyclerview"-->

@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item
             android:id="@+id/shareMenu"
-            android:title="Share"
+            android:title="Show On Map"
             android:visible="true"/>
         <item
             android:id="@+id/saveMenu"

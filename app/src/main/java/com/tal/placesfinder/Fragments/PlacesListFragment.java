@@ -2,6 +2,7 @@ package com.tal.placesfinder.Fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -25,16 +26,13 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.tal.placesfinder.Activites.ServiceActivity;
 import com.tal.placesfinder.Adapters.ItemClickSupport;
 import com.tal.placesfinder.Adapters.PlacesAdapter;
 import com.tal.placesfinder.Adapters.SearchPlacesAdapter;
 import com.tal.placesfinder.DB.DBManager;
 import com.tal.placesfinder.Moduls.Place;
 import com.tal.placesfinder.R;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -52,6 +50,8 @@ public class PlacesListFragment extends Fragment {
    Button nearbySearchBtn;
    SwipeRefreshLayout swipeRefreshLayout;
    SharedPreferences sharedPreferences;
+   Gson gson;
+   Type type;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +65,8 @@ public class PlacesListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_places, container, false);
 
+        gson = new Gson();
+        type = new TypeToken<List<Place>>() {}.getType();
         initItem(view);
         SearchByText(view);
         SearchNearby(view);
@@ -91,25 +93,8 @@ public class PlacesListFragment extends Fragment {
     }
 
     private void parseAndSwap(String placesJson) {
-        List<Place> places = parseToPlaces(placesJson);
+        List<Place> places = gson.fromJson(placesJson, type);
         placesAdapter.swap(places);
-    }
-
-    private List<Place> parseToPlaces (String jsonArr) {
-        List<Place> places = new ArrayList<>();
-        try {
-            JSONArray jsonarray = new JSONArray(jsonArr);
-            for (int i = 0; i < jsonarray.length(); i++) {
-                JSONObject jsonObject = jsonarray.optJSONObject(i);
-                if (jsonObject != null) {
-                    Place place = new Place(jsonObject, 0);
-                    places.add(place);
-                }
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return places;
     }
 
     public boolean isNetworkAvailable() {
@@ -129,8 +114,7 @@ public class PlacesListFragment extends Fragment {
         if (places.isEmpty()) {
             Toast.makeText(getActivity(), "Sorry..we didnt find results", Toast.LENGTH_SHORT).show();
         }
-        Gson gson = new Gson();
-        Type type = new TypeToken<List<Place>>() {}.getType();
+
         String json = gson.toJson(places, type);
         sharedPreferences.edit().putString("Places", json).apply();
         placesAdapter.swap(places);
@@ -202,7 +186,11 @@ public class PlacesListFragment extends Fragment {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         Place place = placesAdapter.getItem(position);
-                        placeSelectedListener.putMarkerInMap(place);
+                        Intent intent = new Intent(getActivity(), ServiceActivity.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("Place", place);
+                        intent.putExtras(bundle);
+                        getActivity().startActivity(intent);
                     }
                 }
         );
@@ -219,7 +207,7 @@ public class PlacesListFragment extends Fragment {
                             public boolean onMenuItemClick(MenuItem item) {
                                 switch (item.getItemId()) {
                                     case R.id.shareMenu:
-
+                                        placeSelectedListener.putMarkerInMap(place);
                                         break;
                                     case R.id.saveMenu:
                                         if(!DBManager.getInstance(getContext()).checkIfExsists(place.getName())) {

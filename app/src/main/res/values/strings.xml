@@ -41,4 +41,7 @@
     <string name="pref_key_delete_fav">delete_favorite_btn</string>
     <string name="delete_title">Delete all favorites</string>
 
+    <string name="asnav">אשנב כל</string>
+    <string name="amara">המרת מטבע</string>
+    <string name="mesluh">שליחת חבילה</string>
 </resources>
