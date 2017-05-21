@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.tal.placesfinder.Activites.ServiceActivity">
+    tools:context="com.tal.placesfinder.Activites.ServiceActivity"
+    android:background="@color/cardview_dark_background">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,14 +17,16 @@
         android:text="בחר את השירות הרצוי"
         android:textSize="20dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:textColor="#fff"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#010101"
+        android:background="#fff"
         android:nestedScrollingEnabled="false"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:textColor="#fff"/>
 
     <TextView
         android:id="@+id/city"
@@ -32,7 +35,8 @@
         android:text="Vacinity"
         android:textSize="18dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:textColor="#fff"/>
 
     <ImageButton
         android:id="@+id/btn1"
@@ -47,7 +51,8 @@
         android:text="אשנב כל"
         android:textSize="15dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:textColor="#fff"/>
 
     <ImageButton
         android:id="@+id/btn2"
@@ -62,7 +67,8 @@
         android:text="המרת מטבע"
         android:textSize="15dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:textColor="#fff"/>
 
     <ImageButton
         android:id="@+id/btn3"
@@ -77,5 +83,6 @@
         android:text="מסירת דואר"
         android:textSize="15dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:textColor="#fff"/>
 </LinearLayout>

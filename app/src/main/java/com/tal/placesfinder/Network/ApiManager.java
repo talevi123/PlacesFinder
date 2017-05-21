@@ -15,10 +15,10 @@ import java.util.List;
 public class ApiManager {
 
     private static final String BASE_URL_TEXT = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=";
-    private static final String API_KEY = "&radius=20000&key=AIzaSyBGqisLORCjLIY65OTIMQ1SZ9EDxQy7oKg";
+    private static final String API_KEY = "&key=AIzaSyBGqisLORCjLIY65OTIMQ1SZ9EDxQy7oKg";
 
     private static final String BASE_URL_NEARBY = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
-    private static final String GOOGLEAPIS_URL_SUFFIX = "&radius=20000&type=post_office";
+    private static final String GOOGLEAPIS_URL_SUFFIX = "&radius=10000&type=post_office";
     //private static final String SUFFIX_URL = "&radius=1000";
 
     public static List<Place> textSearch(String query) {
@@ -43,9 +43,7 @@ public class ApiManager {
                 if (jsonArray != null) {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         Place place = new Place(jsonArray.optJSONObject(i));
-                        if (place.getPhoto() != null) {
-                            places.add(place);
-                        }
+                        places.add(place);
                     }
                 }
             } catch (JSONException e) {

@@ -9,7 +9,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.tal.placesfinder.Fragments.PlacesListFragment"
-    android:baselineAligned="true">
+    android:baselineAligned="true"
+    android:background="@color/cardview_dark_background">
 
     <RelativeLayout
         android:layout_width="wrap_content"

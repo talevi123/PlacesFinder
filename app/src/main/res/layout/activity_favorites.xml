@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.tal.placesfinder.Activites.FavoritesActivity">
+    tools:context="com.tal.placesfinder.Activites.FavoritesActivity"
+    android:background="@color/cardview_dark_background">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"

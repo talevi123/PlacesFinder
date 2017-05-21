@@ -53,7 +53,12 @@ public abstract class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.V
         Place place = placesList.get(position);
         holder.name.setText(place.getName());
         holder.adress.setText(place.getVicinity());
-        Picasso.with(context).load(place.getPhotoUrl()).fit().into(holder.photo);
+
+        if (place.getPhotoUrl() != null) {
+            Picasso.with(context).load(place.getPhotoUrl()).fit().into(holder.photo);
+        } else {
+
+        }
 
         if (kmOrMile.equals(context.getString(R.string.km))) {
             holder.distance.setText(place.getDistance());

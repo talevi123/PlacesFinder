@@ -19,6 +19,7 @@ public class QueueActivity extends AppCompatActivity {
     TextView pepole;
     TextView waitTime;
     ImageView imageView;
+    long startTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class QueueActivity extends AppCompatActivity {
         waitTime.setText(String.valueOf(wait));
         Picasso.with(this).load(image).fit().into(imageView);
 
+        startTime = System.nanoTime();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

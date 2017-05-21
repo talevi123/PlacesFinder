@@ -24,7 +24,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/christ_the_redeemer"/>
+                android:src="@drawable/posti"/>
 
             <TextView
                 android:id="@+id/place_name"
