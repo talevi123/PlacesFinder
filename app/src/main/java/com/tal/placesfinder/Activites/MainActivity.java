@@ -2,14 +2,14 @@ package com.tal.placesfinder.Activites;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.tal.placesfinder.R;
 
 public class MainActivity extends BaseActivity {
-
-    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +20,20 @@ public class MainActivity extends BaseActivity {
     }
 
     private void tapBtn() {
-        image = (ImageView) findViewById(R.id.logo);
-        image.setOnClickListener(new View.OnClickListener() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
                 Intent intent = new Intent(MainActivity.this, PlacesActivity.class);
                 startActivity(intent);
             }
-        });
+        }, 2000);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        tapBtn();
     }
 }
 

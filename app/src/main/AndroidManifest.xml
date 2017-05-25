@@ -45,6 +45,7 @@
 
         <activity android:name=".Activites.ServiceActivity" />
         <activity android:name=".Activites.QueueActivity"></activity>
+        <activity android:name=".Activites.Queue2"></activity>
     </application>
 
 </manifest>
