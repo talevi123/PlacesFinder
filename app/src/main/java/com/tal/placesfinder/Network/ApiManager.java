@@ -19,6 +19,10 @@ public class ApiManager {
 
     private static final String BASE_URL_NEARBY = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=";
     private static final String GOOGLEAPIS_URL_SUFFIX = "&radius=10000&type=post_office";
+
+
+    private static final String QUEUE_NEW_URL = "http://127.0.0.1:5000/api/requestNewQueue/business_id/brunch_id/queue_id/signature";
+    private static final String QUEUE_GET_URL = "http://127.0.0.1:5000/api/getUserInQueue/queue_id";
     //private static final String SUFFIX_URL = "&radius=1000";
 
     public static List<Place> textSearch(String query) {

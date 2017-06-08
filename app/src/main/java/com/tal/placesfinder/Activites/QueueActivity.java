@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.app.NotificationCompat;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 import com.tal.placesfinder.R;
@@ -34,7 +34,7 @@ public class QueueActivity extends AppCompatActivity {
 
         Random r = new Random();
         final int wait = r.nextInt(41 - 25) + 25;
-        int costumers = r.nextInt(6 - 1) + 1;
+        int costumers = 3;
 
         init();
 
@@ -65,8 +65,9 @@ public class QueueActivity extends AppCompatActivity {
             @Override
             public void run() {
                 addNotification();
+                Toast.makeText(getApplication().getApplicationContext(),"You the first in line :)",Toast.LENGTH_LONG).show();
             }
-        }, 5 * 1000);
+        }, wait * 1000);
     }
 
     private void init() {
